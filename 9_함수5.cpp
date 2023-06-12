@@ -17,6 +17,9 @@ using namespace std;
 //    코드 메모리 사용량이 증가할 수 있습니다.
 //   - 인라인 최적화가 수행된다면, 메모리 사용량을 최적화할 수 있습니다.
 
+// C++ 표준 라이브러리
+// => STL(Standard Template Library)
+
 template <typename T>
 T square(T x) { return x * x; }
 
