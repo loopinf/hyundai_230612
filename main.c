@@ -11,3 +11,9 @@ int main(void)
 
     return 0;
 }
+
+// main.c      calc.cpp
+//             extern "C" int Add(int a, int b) {}
+
+// main.cpp                              calc.c
+// extern "C" int Add(int a, int b);
