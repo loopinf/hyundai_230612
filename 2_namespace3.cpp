@@ -5,6 +5,10 @@
 #include <cstdio>
 // C++ 표준 헤더를 통해 C의 헤더를 포함하는 것이 좋습니다.
 
+#include <cstdlib>
+#include <cstring>
+#include <cctype>
+
 int main()
 {
     std::printf("Hello, C\n");
