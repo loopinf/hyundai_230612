@@ -15,6 +15,7 @@ using namespace std;
 //   fprintf(stderr, "...");
 //   std::cerr
 
+#if 0
 int main()
 {
     double n;
@@ -30,4 +31,26 @@ int main()
 
     cin >> str;
     cout << str << endl;
+}
+#endif
+
+#include <iomanip> // setw / setfill
+
+int main()
+{
+    // int n = 0xFAFA;
+    //      1111 1010 1111 1010
+
+    // C++11, 2진수 상수를 표현할 수 있습니다.
+    //   > 단일 따옴표를 통해 가독성을 높일 수 있습니다.
+    int n = 0b11'1110'101'1111'010;
+
+    printf("%x\n", n);
+    cout << hex << n << endl; // IO 조정자(manipulator)
+
+    printf("%X\n", n);
+    cout << hex << uppercase << n << endl;
+
+    printf("%010d\n", n);
+    cout << setw(10) << setfill('0') << dec << n << endl;
 }
