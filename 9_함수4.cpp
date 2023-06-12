@@ -35,6 +35,9 @@ inline int Square(int x) { return x * x; }
 //   > 최신 컴파일러는 함수의 기계어 사이즈가 크다면,
 //     인라인 함수의 최적화를 수행하지 않습니다.
 //   > 간결한 함수에 대해서만 사용해야 합니다.
+//   - C99 표준에서도, 인라인 함수가 도입되었습니다.
+//   static inline void foo() {} - C99
+//          inline void foo() {} - C++
 
 int main()
 {
