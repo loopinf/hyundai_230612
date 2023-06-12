@@ -21,6 +21,8 @@ int main()
 //   - 우변의 타입을 통해 결정되기 때문에, 반드시 초기화가 필요합니다.
 //   - C의 auto를 다른 의미로 사용합니다.
 
+// => auto는 타입이 추론입니다.
+#if 0
 int main()
 {
     int n = 10;
@@ -31,4 +33,16 @@ int main()
     auto p3 = &x; // int(*)[3]
 
     // auto y; // 컴파일 오류!
+}
+#endif
+
+int main()
+{
+    const int n = 10; // const int
+    auto c = n; // c -> int
+
+    c = 20;
+
+    const auto c2 = n; // c2 -> const int
+    // c2 = 42; // 컴파일 오류!
 }
