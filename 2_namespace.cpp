@@ -19,7 +19,11 @@ namespace mp3 {
 namespace mp4 {
     void Play() { std::cout << "Mp4 Play" << std::endl; }
 }
+}
 
+// audio_play.cpp
+namespace audio {
+// ...
 }
 
 // video.cpp
