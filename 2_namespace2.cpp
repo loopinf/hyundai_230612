@@ -26,7 +26,7 @@ int main()
 #endif
 
 // 2) using 선언(Declaration)
-
+#if 0
 using std::cout;
 using std::endl;
 
@@ -38,5 +38,32 @@ using audio::Play;
 int main()
 {
     cout << "Hello, C++" << endl;
+    Play();
+}
+#endif
+
+// 3) using 지시어(Directive)
+// > 특정한 이름 공간의 모든 함수 / 변수를 암묵적으로 접근할 수 있습니다.
+// - 주의해야 합니다.
+//  => 이름 충돌의 문제의 가능성이 생깁니다.
+
+namespace video {
+void Play() { cout << "Video Play" << endl; }
+}
+
+namespace audio {
+void Play() { cout << "Audio Play" << endl; }
+}
+
+using namespace std;
+// using namespace audio;
+// using namespace video;
+
+using video::Play;
+
+int main()
+{
+    cout << "Hello, C++" << endl;
+    audio::Play();
     Play();
 }
