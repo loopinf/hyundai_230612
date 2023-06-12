@@ -1,7 +1,9 @@
 #include <iostream>
 
 // calc.cpp
-extern "C" int Add(int a, int b)
+extern "C" int Add(int a, int b); // 선언부
+
+int Add(int a, int b)
 {
     std::cout << "C++ 함수입니다" << std::endl;
     return a + b;
