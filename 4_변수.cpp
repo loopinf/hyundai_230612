@@ -37,6 +37,7 @@ int main()
 #endif
 
 // C++은 태그를 타입으로 인식합니다.
+// > struct, union, enum을 생략할 수 있습니다.
 int main()
 {
     Point pt;
