@@ -9,7 +9,7 @@ using namespace std;
 // void foo() { }
 
 // 2) 파라미터 기본값과 사용할 때, 주의가 필요합니다.
-// 파라미터 기본값
+//  - 파라미터 기본값과 오버로딩은 같이 사용하지 않습니다.
 void foo(int n = 100) { }
 void foo() { }
 
