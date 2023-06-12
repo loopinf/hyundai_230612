@@ -21,7 +21,7 @@ int main(void)
 
     char str3[32];
     // str3 = "hello";
-    strcpy(str3, "hello");
+    strcpy(str3, str1); // 할당된 메모리 외에 복사가 수행될 경우 미정의 동작의 위험성이 있습니다.
     printf("%s\n", str3);
 
     strcat(str3, " world");
@@ -31,7 +31,7 @@ int main(void)
 
 // C++ 문자열
 // => std::string
-
+#if 1
 #include <string>
 
 // 1) 문자열의 연산을 연산자를 이용할 수 있습니다.
@@ -53,3 +53,4 @@ int main()
     s3 += " world";
     cout << s3 << endl;
 }
+#endif
