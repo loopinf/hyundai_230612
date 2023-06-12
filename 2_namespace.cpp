@@ -9,6 +9,7 @@
 // void audio_init() {}
 
 // audio.cpp
+// > namespace는 소문자로 작성하는 것이 맞습니다.
 namespace audio {
 void Init() { std::cout << "Audio Init" << std::endl; }
 
