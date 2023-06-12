@@ -3,7 +3,7 @@
 
 // namespace를 사용하는 방법 3가지
 // 1) 전체 이름을 명시하는 방법
-
+#if 0
 // 전역 이름 공간의 함수
 void Play() { std::cout << "Global Play" << std::endl; }
 
@@ -22,4 +22,21 @@ int main()
     std::cout << "Hello, C++" << std::endl;
     audio::Play();
     audio::Init();
+}
+#endif
+
+// 2) using 선언(Declaration)
+
+using std::cout;
+using std::endl;
+
+namespace audio {
+void Play() { cout << "Audio Play" << endl; }
+}
+using audio::Play;
+
+int main()
+{
+    cout << "Hello, C++" << endl;
+    Play();
 }
