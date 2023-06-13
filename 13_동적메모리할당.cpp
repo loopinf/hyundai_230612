@@ -88,4 +88,9 @@ int main()
     }
 
     delete[] p3; // !!!
+
+    int* p = NULL;
+    free(p); // 아무일도 일어나지 않습니다.
+
+    delete p; // 아무일도 일어나지 않습니다.
 }
