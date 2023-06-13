@@ -8,7 +8,12 @@ using namespace std;
 //       1) public: 외부에서 접근이 가능합니다.
 //       2) private: 외부에서 접근이 불가능합니다. 오직 멤버 함수를 통해서만 접근이 가능합니다.
 
-struct Stack {
+// 2. struct: 기본 접근 지정자가 public 입니다.
+//    class : 기본 접근 지정자가 private 입니다.
+//     > 객체를 설계할 때, 사용하는 사용자 정의 타입입니다.
+//       : "클래스는 객체를 생성하는 틀입니다."
+
+class Stack {
 private:
     // 멤버 데이터(상태)
     int buff[10];
