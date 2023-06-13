@@ -26,10 +26,14 @@ using namespace std;
 
 int main()
 {
+    // const int c2; // 컴파일 오류!
+
     constexpr int n = 100; // 컴파일 타임 상수
     // n = 42;
 
     int x;
     cin >> x;
+
+    // constexpr int c2 = x; // 런타임 상수, constexpr 오류!
     const int c = x; // 런타임 상수
 }

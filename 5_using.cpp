@@ -13,6 +13,8 @@ using namespace std;
 // 2) using - C++11
 //    Type aliasing
 //    => typedef를 대체합니다.
+//    1) 직관적이다.
+//    2) 템플릿 기반 타입의 별칭을 작성할 수 있습니다.
 
 #if 0
 typedef int AGE; // AGE == int
