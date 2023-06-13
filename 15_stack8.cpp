@@ -2,38 +2,10 @@
 #include <iostream>
 using namespace std;
 
-class Stack {
-    int* buff;
-    int top;
-
-public:
-    Stack(int size = 10)
-    {
-        cout << "Stack(int)" << endl;
-        buff = new int[size];
-        top = 0;
-    }
-
-    ~Stack()
-    {
-        cout << "~Stack()" << endl;
-        delete[] buff;
-    }
-
-    void push(int n)
-    {
-        buff[top++] = n;
-    }
-
-    int pop()
-    {
-        return buff[--top];
-    }
-};
+#include "stack.h"
 
 int main()
 {
-
     Stack s1(100); // Stack(int)
     Stack s2; // Stack(int)
 
