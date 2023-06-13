@@ -6,6 +6,7 @@ struct Person {
     int age;
 
     // ...
+    char data[1024];
 };
 
 // 사용자 정의 타입은 값으로 전달하는 것은 복사의 비용이 발생할 수 있습니다.
@@ -15,7 +16,7 @@ void PrintPerson(Person person)
 }
 
 // 포인터는 유효성 여부를 반드시 판단해야 합니다.
-void PrintPerson2(const Person* person)
+void PrintPerson2(const Person* person) // 포인터의 크기는 64비트에서 8바이트입니다.
 {
     if (person == NULL) {
         return;

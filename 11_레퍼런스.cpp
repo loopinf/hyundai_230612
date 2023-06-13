@@ -13,7 +13,7 @@ int main()
 }
 #endif
 
-#if 1
+#if 0
 int main()
 {
     int n = 10;
@@ -30,3 +30,14 @@ int main()
     cout << r << endl;
 }
 #endif
+
+int main()
+{
+    int n = 100;
+
+    int& r = n;
+    // n의 메모리를 r이라는 이름으로도 사용할 수 있습니다.
+
+    cout << &n << endl;
+    cout << &r << endl;
+}
