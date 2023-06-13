@@ -21,7 +21,7 @@ using namespace std;
 // 5. 연속된 메모리를 해지할 때는,
 //    delete[] 연산자를 사용해야 합니다.
 
-#if 1
+#if 0
 int main()
 {
     int* p = new int;
@@ -58,3 +58,24 @@ int main()
     free(arr);
 }
 #endif
+
+int main()
+{
+    // int* p = static_cast<int*>(malloc(sizeof(int)));
+    // malloc은 초기화되지 않은 메모리를 반납합니다.
+
+    // int* p = static_cast<int*>(calloc(1, sizeof(int)));
+    // calloc은 0으로 초기화된 메모리를 반납합니다.
+
+    // int* p = new int;
+    // 초기화되지 않은 메모리를 반납합니다 - 쓰레기값
+
+    int* p1 = new int(42);
+    cout << *p1 << endl;
+
+    int* p2 = new int { 42 };
+    cout << *p2 << endl;
+
+    delete p1;
+    delete p2;
+}
