@@ -19,7 +19,6 @@ public:
 
 //       Stack: 템플릿
 // Stack<TYPE>: 클래스
-
 template <typename TYPE>
 Stack<TYPE>::Stack(int size)
 {
