@@ -18,25 +18,43 @@ using namespace std;
 //      별도의 캐스팅이 필요하지 않습니다.
 
 // 4. delete 연산자를 통해 new를 통해 할당한 메모리를 해지할 수 있습니다.
+// 5. 연속된 메모리를 해지할 때는,
+//    delete[] 연산자를 사용해야 합니다.
 
+#if 1
 int main()
 {
     int* p = new int;
 
     *p = 42;
     cout << *p << endl;
-
     delete p;
+
+    int* arr = new int[10]; // 40 byte
+    arr[0] = 10;
+    arr[9] = 42;
+    cout << arr[0] << ", " << arr[9] << endl;
+
+    // 주의: 연속된 메모리를 해지할 때,
+    //      delete[] 연산자를 이용해야 합니다.
+    delete[] arr;
 }
+#endif
 
 #if 0
 int main()
 {
     int* p = static_cast<int*>(malloc(sizeof(int)));
-
     *p = 42;
     cout << *p << endl;
-
     free(p);
+
+    int* arr = static_cast<int*>(malloc(sizeof(int) * 10));
+    arr[0] = 10;
+    arr[9] = 42;
+
+    cout << arr[0] << ", " << arr[9] << endl;
+
+    free(arr);
 }
 #endif
