@@ -9,12 +9,20 @@ using namespace std;
 // 2. 사용자가 생성자를 1개라도 제공하면,
 //    컴파일러는 기본 생성자를 제공하지 않습니다.
 
+// 3. 생성자는 오버로딩이 가능합니다.
+
 class Point {
 private:
     int x;
     int y;
 
 public:
+    Point()
+    {
+        x = 0;
+        y = 0;
+    }
+
     Point(int a, int b)
     {
         x = a;
@@ -24,7 +32,7 @@ public:
 
 int main()
 {
-    // Point pt;       // Point()
+    Point pt; // Point()
 
     Point pt2(10, 20); // Point(int, int)
 }
