@@ -7,7 +7,7 @@ struct Point {
     int y;
 };
 
-#if 0
+#if 1
 int main()
 {
     // Copy Initialization(복사 초기화)
@@ -35,7 +35,7 @@ int main()
 
 // Uniform Initialization
 // => Preventing Narrow
-
+#if 0
 int main()
 {
     double d = 3.14;
@@ -55,3 +55,4 @@ int main()
 
     cout << n2 << endl;
 }
+#endif
