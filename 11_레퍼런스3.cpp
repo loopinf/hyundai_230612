@@ -21,12 +21,16 @@ void PrintPerson2(const Person* person)
     }
 
     cout << person->name << ", " << person->age << endl;
+
+    // person->age = 100;
 }
 
 // const Person& => 참조하는 변수를 변경할 수 없습니다.
 void PrintPerson3(const Person& person)
 {
     cout << person.name << ", " << person.age << endl;
+
+    // person.age = 100;
 }
 // 레퍼런스는 반드시 초기화가 필요하고, NULL 레퍼런스를 지정할 수 없습니다.
 
