@@ -13,6 +13,8 @@ using namespace std;
 // 3. friend
 //   > friend 선언된 함수와 클래스는 자신의 private 멤버에 접근이 가능합니다.
 
+// 4. 캡슐화의 정책을 깨뜨리지 않고, 경계를 확장할 수 있습니다.
+
 class User {
 private:
     string name;
