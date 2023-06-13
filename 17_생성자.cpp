@@ -19,12 +19,14 @@ private:
 public:
     Point()
     {
+        cout << "Point()" << endl;
         x = 0;
         y = 0;
     }
 
     Point(int a, int b)
     {
+        cout << "Point(int, int)" << endl;
         x = a;
         y = b;
     }
