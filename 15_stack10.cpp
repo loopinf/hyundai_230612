@@ -3,7 +3,7 @@
 using namespace std;
 
 #include <stack>
-// 표준 라이브러리에 이미 스택이 제공됩니다.
+// 표준 라이브러리(STL)에 이미 스택이 제공됩니다.
 // 템플릿 기반으로 제공됩니다.
 
 int main()
