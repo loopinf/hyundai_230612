@@ -24,11 +24,17 @@ using namespace std;
 // C++11 - constexpr
 //  > 컴파일 상수에 대해서만 지정할 수 있습니다.
 
+// int n;
+//  : int
+
+// int x[3];
+//  : int[3]
+
 int main()
 {
     // const int c2; // 컴파일 오류!
 
-    constexpr int n = 100; // 컴파일 타임 상수
+    constexpr int n = 100; // 컴파일 타임 상수, const int
     // n = 42;
 
     int x;

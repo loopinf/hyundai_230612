@@ -18,10 +18,10 @@ int main()
 {
     cout << Add(10, 20, 30, 40) << endl;
     cout << Add(10, 20, 30) << endl;
-    cout << Add(10, 20) << endl;
+    // > Add(10, 20, 30, 0);
 
-    // cout << Add(10, 20, 30, 0) << endl;
-    // cout << Add(10, 20, 0, 0) << endl;
+    cout << Add(10, 20) << endl;
+    // > Add(10, 20, 0, 0)
 }
 
 // 함수 정의 - 소스 파일
