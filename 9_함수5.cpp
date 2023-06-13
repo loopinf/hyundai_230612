@@ -21,7 +21,7 @@ using namespace std;
 // => STL(Standard Template Library)
 
 template <typename T>
-T square(T x) { return x * x; }
+inline T square(T x) { return x * x; }
 
 int main()
 {

@@ -17,7 +17,10 @@ int main()
     cout << SQUARE(a) << endl;
     // cout << ((a) * (a)) << endl;
 
-    cout << SQUARE(++a) << endl;
+    ++a;
+    cout << SQUARE(a) << endl;
+
+    // cout << SQUARE(++a) << endl; // 위험합니다.
     // cout << ((++a) * (++a)) << endl; // 미정의 동작
 }
 #endif

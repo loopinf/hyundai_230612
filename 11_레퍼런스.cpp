@@ -13,6 +13,7 @@ int main()
 }
 #endif
 
+#if 1
 int main()
 {
     int n = 10;
@@ -28,3 +29,4 @@ int main()
     r = 100;
     cout << r << endl;
 }
+#endif
