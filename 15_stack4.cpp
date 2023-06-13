@@ -1,4 +1,4 @@
-// 15_stack3.cpp
+// 15_stack4.cpp
 #include <iostream>
 using namespace std;
 
@@ -14,7 +14,6 @@ using namespace std;
 //       : "클래스는 객체를 생성하는 틀입니다."
 
 class Stack {
-private:
     // 멤버 데이터(상태)
     int buff[10];
     int top;
@@ -47,6 +46,7 @@ int main()
     s1.push(30);
 
     // s1.top = 0; // 잘못된 접근
+    // cout << s1.top << endl;
 
     cout << s1.pop() << endl;
     cout << s1.pop() << endl;
