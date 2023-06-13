@@ -29,6 +29,7 @@ void foo(char* s)
 //    => 타입의 불일치 문제를 해결하기 위해 사용해야 합니다.
 
 //  4) dynamic_cast
+//   : 이후에 다룹니다.
 
 int main()
 {
