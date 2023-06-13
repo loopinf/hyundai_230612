@@ -42,7 +42,7 @@ public:
 };
 #endif
 
-#include "stack.hpp"
+#include "stack.hpp" // 헤더 파일
 
 #include <string>
 int main()
