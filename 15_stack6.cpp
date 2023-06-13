@@ -15,6 +15,7 @@ class Stack {
     int top;
 
 public:
+#if 0
     Stack()
     {
         cout << "Stack()" << endl;
@@ -23,6 +24,14 @@ public:
     }
 
     Stack(int size)
+    {
+        cout << "Stack(int)" << endl;
+        buff = new int[size];
+        top = 0;
+    }
+#endif
+    // 파라미터 기본값을 통해 불필요한 오버로딩을 제거할 수 있습니다.
+    Stack(int size = 10)
     {
         cout << "Stack(int)" << endl;
         buff = new int[size];
@@ -44,7 +53,7 @@ int main()
 {
 
     Stack s1(100); // Stack(int)
-    Stack s2; // Stack()
+    Stack s2; // Stack(int)
 
     s1.push(10);
     s1.push(20);
