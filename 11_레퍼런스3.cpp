@@ -8,6 +8,7 @@ struct Person {
     // ...
 };
 
+// 사용자 정의 타입은 값으로 전달하는 것은 복사의 비용이 발생할 수 있습니다.
 void PrintPerson(Person person)
 {
     cout << person.name << ", " << person.age << endl;
