@@ -47,4 +47,7 @@ int main()
 
     Point* pt4 = new Point[3] { {}, { 20, 30 }, {} };
     delete[] pt4;
+
+    Point* pt5 = new Point[3] { Point(), Point(10, 20), Point() };
+    delete[] pt5;
 }
