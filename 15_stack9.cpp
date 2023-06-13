@@ -9,6 +9,10 @@ using namespace std;
 // => 클래스도 템플릿으로 만들 수 있습니다.
 
 // 클래스 템플릿
+// => 클래스 템플릿을 헤더와 소스코드로 분리하는 것은 불가능합니다.
+// => 템플릿은 헤더(선언 + 구현)를 통해서만 제공 가능합니다.
+//    : 확장자를 hpp(.h + .cpp)를 많이 사용합니다.
+#if 0
 template <typename TYPE>
 class Stack {
     TYPE* buff;
@@ -36,6 +40,9 @@ public:
         return buff[--top];
     }
 };
+#endif
+
+#include "stack.hpp"
 
 #include <string>
 int main()
