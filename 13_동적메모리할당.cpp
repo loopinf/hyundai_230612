@@ -78,4 +78,14 @@ int main()
 
     delete p1;
     delete p2;
+
+    // int* p3 = new int[3];
+    // 초기화되지 않은 메모리를 반납합니다.
+
+    int* p3 = new int[3] { 10, 20, 30 };
+    for (int i = 0; i < 3; ++i) {
+        cout << p3[i] << endl;
+    }
+
+    delete[] p3; // !!!
 }
