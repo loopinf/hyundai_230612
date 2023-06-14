@@ -33,5 +33,5 @@ int main()
     cout << gcd(15, 12) << endl;
     cout << gcd(25, 15) << endl;
 
-    cout << gcd(3.14, 5.5) << endl;
+    // cout << gcd(3.14, 5.5) << endl;
 }
