@@ -46,10 +46,14 @@ public:
 //   3) 멤버 객체가 기본 생성자를 제공하지 않을 때
 
 class Rect {
+
+    // 객체 멤버가 초기화되는 순서는 멤버 데이터가 선언된 순서대로 초기화됩니다.
     Point leftTop;
     Point rightBottom;
 
 public:
+    // 초기화리스트를 작성할 때, 멤버 데이터가 선언된 순서대로 작성하는 것이
+    // 좋습니다.
     Rect(int x1, int y1, int x2, int y2)
         : leftTop(x1, y1) // Point::Point(int, int)
         , rightBottom(x2, y2) // Point::Point(int, int)
