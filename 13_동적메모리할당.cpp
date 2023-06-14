@@ -21,6 +21,10 @@ using namespace std;
 // 5. 연속된 메모리를 해지할 때는,
 //    delete[] 연산자를 사용해야 합니다.
 
+//-----
+// 6. 객체의 메모리를 할당할 때, new는 생성자를 호출하지만, malloc은 생성자가 호출되지 않습니다.
+// 7. 객체의 메모리를 해지할 때, delete는 소멸자를 호출하지만, free는 소멸자가 호출되지 않습니다.
+
 #if 0
 int main()
 {
@@ -37,7 +41,9 @@ int main()
 
     // 주의: 연속된 메모리를 해지할 때,
     //      delete[] 연산자를 이용해야 합니다.
-    delete[] arr;
+
+    // delete arr; // 미정의 동작
+    delete[] arr; 
 }
 #endif
 

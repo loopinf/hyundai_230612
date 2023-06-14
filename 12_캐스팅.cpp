@@ -30,7 +30,7 @@ void foo(char* s)
 
 //  4) dynamic_cast
 //   : 이후에 다룹니다.
-
+#if 1
 int main()
 {
     // Uniform Initialization: Preventing Narrow
@@ -62,6 +62,7 @@ int main()
     // foo(static_cast<char*>(s));
     // foo(reinterpret_cast<char*>(s));
 }
+#endif
 
 #if 0
 int main()
@@ -80,6 +81,10 @@ int main()
     // 메모리 재해석
     int v = 0x12345678;
     char* pv = (char*)&v;
+    // 포인터의 타입은 포인터 연산의 단위를 결정합니다.
+    // int* p;
+    //   => p + N => p + sizeof(int) * N
+
     printf("%x %x %x %x\n", pv[0], pv[1], pv[2], pv[3]);
 
     char str[32] = "hello";
