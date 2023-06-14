@@ -72,3 +72,10 @@ int main()
     s.pop();
     cout << "-----------" << endl;
 }
+
+// C++ 추천 서적
+// - Effective C++, 스콧 마이어스
+//   Effective Modern C++
+
+// C++
+//  크로미움, AOSP
