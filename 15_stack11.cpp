@@ -106,25 +106,26 @@ int main()
 // version 4. 생성자 / 소멸자
 //  - 생성자: 객체가 생성되는 시점에 호출되는 약속된 멤버 함수
 //  - 소멸자: 객체가 파괴되는 시점에 호출되는 약속된 멤버 함수
-
+//    > 객체 내부에서 자원(메모리, 파일, 락)을 할당하였을 때, 반드시 소멸자를 정의해서
+//      자원을 해지해야 합니다.
 class Stack {
 private:
     int* buff;
     int top;
 
 public:
-    Stack()
-    {
-        top = 0;
-        buff = new int[10];
-    }
+    // Stack()
+    // {
+    //     top = 0;
+    //     buff = new int[10];
+    // }
 
     ~Stack()
     {
         delete[] buff;
     }
 
-    Stack(int size)
+    Stack(int size = 10)
     {
         top = 0;
         buff = new int[size];
