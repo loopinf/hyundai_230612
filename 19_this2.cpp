@@ -49,7 +49,9 @@ public:
 // Sample 객체는 CreateSample 함수를 통해서만 생성할 수 있습니다.
 Sample* CreateSample()
 {
-    return new Sample;
+    // return new Sample;
+    static Sample s;
+    return &s;
 }
 
 // Sample s;
@@ -57,6 +59,12 @@ int main()
 {
     // Sample s2;
     // Sample* p = new Sample;
+
+    Sample* s1 = CreateSample();
+    Sample* s2 = CreateSample();
+
+    cout << s1 << endl;
+    cout << s2 << endl;
 }
 
 // Design Pattern: 설계 패턴
