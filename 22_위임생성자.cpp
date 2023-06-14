@@ -27,11 +27,12 @@ public:
     }
 
     Person(const string& name)
-        : Person(name, 0, "")
+        : Person(name, 0, "") // 초기화리스트에서 사용해야 합니다.
     {
     }
 
 // 위임 생성자: 생성자에서 다른 생성자를 통해 초기화를 수행할 수 있습니다. => C++11
+//   - 생성자 코드의 불필요한 코드 중복을 제거할 수 있습니다.
 #if 0
     Person(const string& name)
         : name_(name)
