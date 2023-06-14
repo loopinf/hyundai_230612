@@ -50,6 +50,7 @@ public:
     }
 };
 
+#if 0
 int main()
 {
     User user("Tom", 42);
@@ -61,4 +62,25 @@ int main()
     cout << "Ref: " << user.Ref() << endl; // 1
 
     other.Print();
+}
+#endif
+
+#include <string>
+class Sample {
+    string name;
+
+public:
+    Sample(const string& s)
+        : name(s)
+    {
+        cout << "객체 생성: " << name << endl;
+    }
+
+    ~Sample() { cout << "객체 파괴: " << name << endl; }
+};
+
+int main()
+{
+    Sample s1("A");
+    Sample s2("B");
 }
