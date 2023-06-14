@@ -24,6 +24,7 @@ using namespace std;
 //  > 멤버 데이터와 멤버 함수를 접근할 수 없습니다.
 //  > 정적 멤버 데이터와 정적 멤버 함수 접근할 수 있습니다.
 
+#if 0
 class Sample {
 public:
     static int n; // 정적 멤버 데이터
@@ -77,4 +78,32 @@ int main()
     // 정적 멤버 데이터 / 멤버 함수는 객체를 통해서도 접근할 수 있습니다.
     cout << obj.n << endl;
     obj.foo();
+}
+#endif
+
+class Sample {
+    int data;
+
+public:
+    void foo() { }
+
+    static void Func()
+    {
+        // data = 10; // this->data = 10;
+        // foo(); // this->foo();
+    }
+
+    // 정적 멤버 함수에서 멤버 데이터와 멤버 함수에 접근하기 위해서는
+    // 객체의 주소를 명시적으로 전달받으면 됩니다.
+    static void Func(Sample* self)
+    {
+        self->data = 10;
+        self->foo();
+    }
+};
+
+int main()
+{
+    Sample s;
+    Sample::Func(&s);
 }
