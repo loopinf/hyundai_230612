@@ -22,6 +22,16 @@ public:
         strcpy(name, s);
     }
 
+#if 0
+    User(const char* s, int n)
+        : name(new char[strlen(s) + 1])
+        , age(n)
+    {
+        // name = new char[strlen(s) + 1];
+        strcpy(name, s);
+    }
+#endif
+
     ~User()
     {
         delete[] name;
