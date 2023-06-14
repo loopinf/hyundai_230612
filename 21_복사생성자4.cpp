@@ -4,7 +4,7 @@ using namespace std;
 
 class Point {
 public:
-    Point(int x, int y) { }
+    Point() { }
 
     Point(const Point& rhs) { cout << "Point(const Point&)" << endl; }
     ~Point() { cout << "~Point()" << endl; }
@@ -40,4 +40,11 @@ public:
 
 int main()
 {
+    Stack<Point> s;
+
+    Point pt;
+
+    cout << "-----------" << endl;
+    s.push(pt);
+    cout << "-----------" << endl;
 }
