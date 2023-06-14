@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-//    1) 깊은 복사
+//  1) 깊은 복사(Deep copy)
 
 class User {
     char* name;
