@@ -14,6 +14,8 @@ using namespace std;
 // 2. && - rvalue reference, C++11
 //    > rvalue를 참조할 수 있습니다.
 
+// a = 3;
+
 // lvalue: 좌변에 올수 있는 것
 //        > 특정 메모리 위치를 참조하는 표현식입니다.
 //          모든 lvalue는 메모리 주소가 할당되어 있으므로, & 연산자를 이용해서
@@ -56,6 +58,8 @@ int main()
 // }
 
 // 필요에 따라서, lvalue와 rvalue를 다르게 처리해야 하는 경우가 있습니다.
+
+#if 0
 void foo(int& r)
 {
     cout << "lvalue" << endl;
@@ -80,4 +84,44 @@ int main()
     // => lvalue, rvalue 모두 참조할 수 있습니다.
     const int& cr1 = n; /* OK */
     const int& cr2 = 100; /* OK */
+}
+#endif
+
+#include <cstring>
+
+struct User {
+    char name[32];
+
+public:
+    User(const char* s)
+    {
+        strcpy(name, s);
+    }
+};
+
+// 1) User& => 함수를 통해서 수정될 수 있습니다.
+// 2) rvalue를 처리할 수 없습니다.
+// void PrintUser(User& user)
+
+void PrintUser(const User& user)
+{
+    cout << user.name << endl;
+}
+// const T& => const lvalue reference
+//           : lvalue와 rvalue를 모두 참조할 수 있습니다.
+//  : lvalue와 rvalue를 구분해서 처리할수 없습니다.
+//  해결방법 - C++11, rvalue reference
+
+void PrintUser(User&& user)
+{
+    cout << "rvalue: " << user.name << endl;
+}
+
+int main()
+{
+    // User user = { "Tom" }; - 구조체
+    User user("Tom");
+
+    PrintUser(user);
+    PrintUser(User("Tom")); // User("Tom"): 임시 객체 생성 문법 - rvalue
 }
