@@ -5,6 +5,7 @@ using namespace std;
 
 // 1. private: 외부에서 접근이 불가능합니다.
 //  - 자신의 멤버 함수를 통해서만 접근이 가능합니다.
+//  - friend 함수 / friend 클래스
 
 // 2. public: 외부에서 접근이 가능합니다.
 //     - struct: public
