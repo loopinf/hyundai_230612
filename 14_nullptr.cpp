@@ -8,6 +8,7 @@ using namespace std;
 
 // 3. NULL 문제점
 //   => 정수인지 포인터 타입인지 모호합니다.
+//    - 타입 안정성 문제
 
 // 4. C++11에서 NULL을 대체하는, nullptr 도입되었습니다.
 
@@ -18,8 +19,10 @@ using namespace std;
 void foo(int n) { cout << "int" << endl; }
 void foo(int* p) { cout << "int*" << endl; }
 
+#if 0
 int main()
 {
+    cout << sizeof(bool) << endl;
     bool b = true;
     b = false;
     printf("%d\n", true);
@@ -35,14 +38,17 @@ int main()
         cout << "NULL은 FALSE 입니다." << endl;
     }
 }
+#endif
 
 #if 0
 int main()
 {
     int* p1 = NULL;
-    int* p2 = 0;
+    int* p2 = 0; // OK, 정수 0은 포인터 타입으로의 암묵적인 변환을 허용합니다.
+
+    // int* p3 = 100; // Error!, 0이 아닌 정수는 허용되지 않습니다.
 
     foo(0);
-    foo(NULL);
+    // foo(NULL); // Error!, NULL은 0인지 포인터인지 모호합니다.
 }
 #endif
