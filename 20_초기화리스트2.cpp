@@ -50,10 +50,16 @@ class Rect {
     Point rightBottom;
 
 public:
-    Rect()
-        : leftTop(10, 20) // Point::Point(int, int)
-        , rightBottom(40, 50) // Point::Point(int, int)
+    Rect(int x1, int y1, int x2, int y2)
+        : leftTop(x1, y1) // Point::Point(int, int)
+        , rightBottom(x2, y2) // Point::Point(int, int)
     {
+    }
+
+    void Print()
+    {
+        leftTop.Print();
+        rightBottom.Print();
     }
 };
 
@@ -62,5 +68,6 @@ int main()
     Point pt(10, 20);
     pt.Print();
 
-    Rect rect;
+    Rect rect(10, 20, 30, 40);
+    rect.Print();
 }
