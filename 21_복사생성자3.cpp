@@ -12,9 +12,33 @@ public:
 
 // 주의 사항: 지역 객체의 참조를 반환하는 것은 미정의 동작입니다.
 // > 지역 객체는 반드시 값으로 반환해야 합니다.
-Sample& foo()
+// Sample& foo()
+
+#if 0
+Sample foo()
+{
+    Sample s; // 1) Sample()
+    return s;
+    // 반환용 임시 객체가 복사 생성을 통해 생성됩니다. - 2) Sample(const Sample&)
+
+} // 3) ~Sample()
+#endif
+
+// RVO(Return Value Optimization)
+// => 함수가 임시 객체를 반환하면, 복사 비용을 제거할 수 있습니다.
+#if 0
+Sample foo()
+{
+    return Sample();
+}
+#endif
+
+// NRVO(Named RVO)
+// => 최신 컴파일러는 지역 객체를 값으로 반환 할때, 복사 비용을 제거합니다.
+Sample foo()
 {
     Sample s;
+    // ..
     return s;
 }
 
@@ -22,6 +46,7 @@ int main()
 {
     cout << "--------" << endl;
     foo();
+    // 4) 반환용 임시 객체 파괴: ~Sample()
     cout << "--------" << endl;
 }
 
