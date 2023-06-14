@@ -35,19 +35,30 @@ public:
             delete[] name;
             delete ref;
         }
+
+        cout << "Ref: " << Ref() << endl;
     }
 
     void Print()
     {
         cout << name << ", " << age << endl;
     }
+
+    int Ref()
+    {
+        return *ref;
+    }
 };
 
 int main()
 {
     User user("Tom", 42);
+    cout << "Ref: " << user.Ref() << endl; // 1
+
     user.Print();
 
     User other = user;
+    cout << "Ref: " << user.Ref() << endl; // 1
+
     other.Print();
 }
