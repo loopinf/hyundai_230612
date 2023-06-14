@@ -103,6 +103,7 @@ int main()
 }
 #endif
 
+#if 0
 // version 4. 생성자 / 소멸자
 //  - 생성자: 객체가 생성되는 시점에 호출되는 약속된 멤버 함수
 //  - 소멸자: 객체가 파괴되는 시점에 호출되는 약속된 멤버 함수
@@ -146,4 +147,80 @@ int main()
     cout << s1.pop() << endl;
     cout << s1.pop() << endl;
     cout << s1.pop() << endl;
+}
+#endif
+
+// version 5. 템플릿
+//  => 모든 타입에 대해서 동작하는 스택을 만들 수 있습니다.
+#if 0
+template <typename TYPE>
+class Stack {
+private:
+    TYPE* buff;
+    int top;
+
+public:
+    ~Stack()
+    {
+        delete[] buff;
+    }
+
+    Stack(int size = 10)
+    {
+        top = 0;
+        buff = new TYPE[size];
+    }
+
+    void push(TYPE n) { buff[top++] = n; }
+    TYPE pop() { return buff[--top]; }
+};
+
+// 함수 템플릿은 인자를 통해, 템플릿의 타입을 컴파일러가 추론할 수 있습니다.
+// 하지만 클래스 템플릿은 추론이 불가능한 경우가 많습니다.
+//  => 명시적인 타입 지정
+
+// 1. template <typename TYPE>
+// class Stack
+//  : Stack<int>, Stack<double>
+//   - 타입 파라미터
+
+// 2. template <typename T1, typename T2>
+// class Stack
+//  : Stack<int, double>
+//    Stack<string, int>
+
+int main()
+{
+    Stack<int> s1(100);
+
+    s1.push(10);
+    s1.push(20);
+    s1.push(30);
+
+    cout << s1.pop() << endl;
+    cout << s1.pop() << endl;
+    cout << s1.pop() << endl;
+}
+#endif
+
+// 표준 라이브러리에서 다양한 자료구조(컨테이너, 컬렉션)를 제공하고 있습니다.
+#include <stack>
+
+int main()
+{
+    stack<int> s;
+
+    s.push(10);
+    s.push(20);
+    s.push(30);
+
+    // STL 컨테이너는 데이터를 제거하는 연산과, 참조하는 연산이 분리되어 있습니다.
+    cout << s.top() << endl;
+    s.pop();
+
+    cout << s.top() << endl;
+    s.pop();
+
+    cout << s.top() << endl;
+    s.pop();
 }
