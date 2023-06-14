@@ -56,15 +56,29 @@ int main()
 }
 #endif
 
+#if 0
 // version 3. 상태를 조작하는 함수와 상태를 하나의 타입으로 묶을 수 있습니다.
 //     => 캡슐화(상태 + 행위)
 //     => 상태와 행위를 가지고 있는 변수 => 객체
 
-struct Stack {
+// 객체의 상태는 멤버 함수를 통해 관리되어야 합니다.
+// 외부에서 함부로 접근하거나 변경할 수 없어야 합니다.
+//  => 정보 은닉(Information Hiding)
+//  => 접근 지정자
+//   1) public: 외부에서 접근이 가능합니다.
+//   2) private: 외부에서 접근이 불가능하고, 멤버 함수를 통해서만 접근이 가능합니다.
+
+//  => C++에서 class는 기본 접근 지정자가 private 입니다.
+//           struct는 기본 접근 지정자가 public 입니다.
+
+//  => 클래스는 객체를 생성하는 틀 입니다.
+class Stack {
+private:
     // 멤버 데이터(상태) / 속성(property)
     int buff[10];
     int top;
 
+public:
     // 멤버 함수(행위) / 메소드(method)
     void init() { top = 0; }
     void push(int n) { buff[top++] = n; }
@@ -76,6 +90,53 @@ int main()
     Stack s1, s2;
 
     s1.init();
+
+    s1.push(10);
+    s1.push(20);
+    s1.push(30);
+
+    // s1.top = 100;
+
+    cout << s1.pop() << endl;
+    cout << s1.pop() << endl;
+    cout << s1.pop() << endl;
+}
+#endif
+
+// version 4. 생성자 / 소멸자
+//  - 생성자: 객체가 생성되는 시점에 호출되는 약속된 멤버 함수
+//  - 소멸자: 객체가 파괴되는 시점에 호출되는 약속된 멤버 함수
+
+class Stack {
+private:
+    int* buff;
+    int top;
+
+public:
+    Stack()
+    {
+        top = 0;
+        buff = new int[10];
+    }
+
+    ~Stack()
+    {
+        delete[] buff;
+    }
+
+    Stack(int size)
+    {
+        top = 0;
+        buff = new int[size];
+    }
+
+    void push(int n) { buff[top++] = n; }
+    int pop() { return buff[--top]; }
+};
+
+int main()
+{
+    Stack s1(100), s2;
 
     s1.push(10);
     s1.push(20);
