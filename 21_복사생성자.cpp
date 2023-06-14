@@ -30,8 +30,25 @@ public:
 //  2) 사용자가 복사 생성자를 제공하지 않으면, 컴파일러가 멤버를 복사하는 복사 생성자를
 //     제공합니다.
 
+//  3) 복사 생성자: 자신과 동일한 타입의 객체를 통해 객체를 생성할 때 호출되는 생성자
+
+class Sample { };
+// 1) 기본 생성자
+// 2) 복사 생성자
+
+class Sample2 {
+public:
+    Sample2(const Sample2& rhs) { }
+};
+// 복사 생성자도 생성자이기 때문에, 컴파일러는 기본 생성자를 제공하지 않습니다.
+
 int main()
 {
+    // Sample2 x;
+
+    Sample s1;
+    Sample s2(s1);
+
     Point pt1(10, 20); // Point::Point(int, int)
     pt1.Print();
 
