@@ -34,7 +34,7 @@ public:
     {
     }
 
-    // 상수 멤버 함수와 비상수 멤버 함수를 동시에 제공할 수 있습니다.
+    // 1. 상수 멤버 함수와 비상수 멤버 함수를 동시에 제공할 수 있습니다.
     Point& GetLeftTop()
     {
         return leftTop;
@@ -46,6 +46,24 @@ public:
         return leftTop;
     }
 };
+
+// 2. 상수 멤버 함수만 제공할 경우
+//           Point p;   ---> 상수 멤버 함수
+//     const Point p;   ---> 상수 멤버 함수
+//    const Point& p;   ---> 상수 멤버 함수
+//    const Point* p;   ---> 상수 멤버 함수
+
+//   비상수 멤버 함수만 제공할 경우
+//           Point p;   ---> 비상수 멤버 함수
+//     const Point p;   ---> X
+//    const Point& p;   ---> X
+//    const Point* p;   ---> X
+
+//   상수 멤버 함수 / 비상수 멤버 함수 모두 제공할 경우
+//           Point p;   ---> 비상수 멤버 함수
+//     const Point p;   ---> 상수 멤버 함수
+//    const Point& p;   ---> 상수 멤버 함수
+//    const Point* p;   ---> 상수 멤버 함수
 
 int main()
 {
