@@ -47,7 +47,6 @@ int main()
 
             Shape* copy = shapes[index]->Clone();
             shapes.push_back(copy);
-
             // 문제점: type에 의존하는 코드는 OCP를 만족하지 않습니다.
             //       Replace type code with polymorphism => Refactoring
 
