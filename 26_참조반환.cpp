@@ -107,7 +107,23 @@ public:
         job = s;
         return *this;
     }
+
+    void Print() const
+    {
+        cout << name << ", " << age << endl;
+    }
 };
+
+// foo(User user)
+void foo(const User& user)
+{
+    user.Print();
+}
+
+void goo(User& user)
+{
+    user.SetAddress("Suwon");
+}
 
 int main()
 {
