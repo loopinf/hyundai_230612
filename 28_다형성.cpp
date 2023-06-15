@@ -5,7 +5,22 @@ using namespace std;
 class Animal { };
 
 class Dog : public Animal { };
+class Cat : public Animal { };
 
+// Dog is an Animal
+// Cat is an Animal
+//  => 자식 클래스 is a 부모 클래스
+//  => is-a 관계
+
+int main()
+{
+    Animal* p;
+
+    p = new Dog;
+    p = new Cat;
+}
+
+#if 0
 int main()
 {
     Animal a;
@@ -29,3 +44,4 @@ int main()
     // Dog* pd2 = &a; // error!
     // Dog& rd2 = a; // error!
 }
+#endif
