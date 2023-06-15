@@ -38,6 +38,7 @@ int main()
 
 // Unix / Linux
 //  => VFS(Virtual File System)
+//  "모든 것은 파일이다."
 
 // "다형성(polymorphism)"
 //  open / read / write / close  ------> 일반 파일          ---> 일반 파일 처리
