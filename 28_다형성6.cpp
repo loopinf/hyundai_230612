@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+#if 0
 class Car {
 public:
     virtual void Start() const { cout << "Car::Start" << endl; }
@@ -25,4 +26,18 @@ int main()
 {
     Avante avante;
     avante.Start();
+}
+#endif
+
+// 아래 클래스는 상속을 고려한 클래스가 아닙니다.
+// => 상속 금지
+class Car final {
+public:
+    void Start() { cout << "Car::Start()" << endl; }
+};
+
+// class Sedan : public Car { };
+
+int main()
+{
 }
