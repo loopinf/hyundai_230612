@@ -33,14 +33,18 @@ Sample foo()
 }
 #endif
 
+#if 1
 // NRVO(Named RVO)
 // => 최신 컴파일러는 지역 객체를 값으로 반환 할때, 복사 비용을 제거합니다.
+
+// RVO / NRVO: 지역 객체를 값으로 반환할 때, 최적화됩니다.
 Sample foo()
 {
     Sample s;
     // ..
     return s;
 }
+#endif
 
 int main()
 {
