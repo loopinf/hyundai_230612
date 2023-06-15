@@ -30,5 +30,16 @@ int main()
     Sedan s;
     Car* p = &s;
 
-    p->Start();
+    //  - dynamic, virtual
+    p->Start(); // "다형성"
+    // p의 실제 객체가 Car 타입이면, Car::Start()
+    //            Sedan 타입이면, Sedan::Start()
 }
+
+// Unix / Linux
+//  => VFS(Virtual File System)
+
+// "다형성(polymorphism)"
+//  open / read / write / close  ------> 일반 파일          ---> 일반 파일 처리
+//                                      디바이스 특수 파일    ---> 장치 제어
+//                                       소켓 파일          ---> 네트워크
