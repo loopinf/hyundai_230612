@@ -49,7 +49,16 @@ int main()
             shapes.push_back(copy);
 
             // 문제점: type에 의존하는 코드는 OCP를 만족하지 않습니다.
-            //       Replace type code with polymorphism
+            //       Replace type code with polymorphism => Refactoring
+
+            // 리팩토링(마틴 파울러), 1판: Java, 2판: Javascript(객체 지향 + 함수형)
+            //  - 유지보수성을 떨어뜨리는 코드 => 냄새
+
+            // 클린 코드(로버트 C 마틴, 엉클 밥)
+            // => 테스트
+
+            // 객체의 복제를 다형성으로 구현하는 설계
+            //  => Prototype Pattern
 #if 0
             // shapes[index] // Rect?? Circle???
             int type = shapes[index]->type;
