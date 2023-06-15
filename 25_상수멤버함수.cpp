@@ -36,6 +36,11 @@ public:
 // 3. 멤버 함수 안에서 멤버 데이터의 값을 변경하지 않는 경우,
 //    반드시 상수 멤버 함수로 만들어야 합니다.
 
+void PrintPoint(const Point& pt)
+{
+    pt.Print(); // 상수 멤버 함수만 호출이 가능합니다.
+}
+
 int main()
 {
     Point pt(10, 20);
