@@ -16,15 +16,26 @@ public:
 };
 
 // 2. 함수 바인딩(Binding)
+//   Car* p = &sedan;
 //   p->Start();
+
 // 1. 정적 바인딩(static binding)
 //   : 컴파일 타임에 컴파일러가 결정합니다.
 //     컴파일러가 컴파일 타임에 p의 타입을 보고 어떤 함수를 호출할지 결정합니다.
+//   "인라인 최적화"가 가능합니다.
+
+//   [Car*] p = &sedan;
+//   p->Start();
 
 // 2. 동적 바인딩(dynamic binding)
 //   : 실행 시간에 결정합니다.
 //     컴파일러가 p가 실행중에 어떤 타입의 객체를 가지고 있는지 조사해서
 //     함수를 호출하는 코드를 삽입합니다.
+//   "인라인 최적화"가 불가능합니다.
+
+//   Car* p = &sedan;
+//    p ------------------> [ Sedan ]
+//   p->Start();
 
 // 3. virtual: 멤버 함수의 함수 바인딩을 동적 바인딩으로 수행합니다.
 
@@ -36,7 +47,7 @@ int main()
     Car* p = &car;
     p->Start();
 
-    p = &sedan;
+    p = &sedan; // Sedan* -> Car*
     p->Start();
 
     Car& r1 = car;
