@@ -17,6 +17,8 @@ private:
 
     void Init() { cout << "초기화" << endl; }
 
+    string address;
+
 public:
     Person(const string& name, int age, const string& phone)
         : name_(name)
@@ -26,8 +28,16 @@ public:
         Init();
     }
 
+    void SetAddress(const std::string& address)
+    {
+        // 멤버의 이름과 인자의 이름이 동일하면, 인자의 이름이 멤버의 이름을 가립니다.
+
+        // 반드시 this를 명시해서 사용해야 합니다.
+        this->address = address;
+    }
+
     Person(const string& name)
-        : Person(name, 0, "") // 초기화리스트에서 사용해야 합니다.
+        : Person(name, 0, "") // 위임생성자, 초기화리스트에서 사용해야 합니다.
     {
     }
 

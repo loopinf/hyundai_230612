@@ -32,20 +32,28 @@ public:
 
     // void push(const TYPE& n)    => void push(const Point& n)
     //                                void push(const int& n)
-    void push(const TYPE& n)
-    {
-        buff_[top_++] = n;
-    }
 
 // 아래 함수는 참조를 반환할 수 없습니다.
 // 스택에서 제거되는 영역에 대한 참조를 반환하면 안됩니다.
 //  - 해결 방법: 참조하는 연산과 제거하는 연산을 분리해야 합니다.
 #if 0
+    void push(TYPE n)
+    {
+        buff_[top_++] = n;
+    }
+
     TYPE pop()
     {
         return buff_[--top_];
     }
 #endif
+
+#if 1
+    void push(const TYPE& n)
+    {
+        buff_[top_++] = n;
+    }
+
     TYPE& top()
     {
         return buff_[top_ - 1];
@@ -55,6 +63,7 @@ public:
     {
         --top_;
     }
+#endif
 };
 
 int main()
