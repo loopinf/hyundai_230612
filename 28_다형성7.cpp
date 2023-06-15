@@ -11,7 +11,9 @@ public:
 class Dog : public Animal {
 public:
     Dog() { cout << "Dog()" << endl; }
-    ~Dog() { cout << "~Dog()" << endl; }
+
+    ~Dog() override { cout << "~Dog()" << endl; }
+    // 부모의 소멸자가 가상이 아닌 경우, 컴파일 오류가 발생합니다.
 };
 
 // 1. 아래 코드에서 자식의 소멸자가 제대로 호출되지 않는 문제를 이해해야 합니다.
@@ -26,6 +28,8 @@ public:
 
 // 3. 가상 소멸자가 없는 클래스는 상속을 금지해야 합니다.
 //  : class Car final { };
+
+// 4. 부모의 소멸자가 가상이면, 자식의 소멸자도 가상입니다.
 
 int main()
 {
