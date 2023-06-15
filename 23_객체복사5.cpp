@@ -63,3 +63,7 @@ int main()
 
     other.Print();
 }
+
+// C     => Go(켄 톰슨)
+// C++   => Rust
+// Java  => Kotlin
