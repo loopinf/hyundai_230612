@@ -57,4 +57,11 @@ int main()
 
     Point pt3(pt1); // Point::Point(const Point&)
     pt3.Print();
+
+    // Uniform Initialization
+    Point pt4 { pt1 }; // Point::Point(const Point&)
+    pt4.Print();
+
+    Point pt5 = { pt1 }; // Point::Point(const Point&)
+    pt5.Print();
 }
