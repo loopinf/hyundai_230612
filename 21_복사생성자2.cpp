@@ -33,18 +33,20 @@ int main()
 
 // 2) 함수가 객체를 값으로 반환할 때
 //  > 유효한 메모리의 객체라면, 참조를 반환하면 됩니다.
-
+#if 1
 Sample s;
 // Sample foo()
 
 Sample& foo()
 {
-    return s; // '반환용 임시 객체'가 생성되서 전달됩니다.
+    return s; // '반환용 임시 객체'가 생성되서 전달됩니다. - Sample(const Sample&)
 }
 
 int main()
 {
     cout << "--------" << endl;
     foo();
+    // 이순간 임시 객체가 파괴됩니다. - ~Sample();
     cout << "--------" << endl;
 }
+#endif
