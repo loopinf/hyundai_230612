@@ -47,7 +47,7 @@ int main()
     /*
     mov     r8d, 20                              ; r8d = 20
     mov     edx, 10                              ; edx = 10
-    lea     rcx, QWORD PTR pt$[rsp]              ; ecx = &pt;
+    lea     rcx, QWORD PTR pt$[rsp]              ; rcx = &pt;
 
     call    void Point::Set(int,int)             ; Point::Set
     */
