@@ -55,7 +55,7 @@ int main()
     r.Print();
 
     const Rect rect2;
-    const Point& r2 = rect.GetLeftTop();
+    const Point& r2 = rect2.GetLeftTop();
     // r2.Move(100, 200); // 상수 멤버 함수만 호출이 가능합니다.
     r2.Print();
 }
