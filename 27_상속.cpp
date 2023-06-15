@@ -65,6 +65,7 @@ public:
         cout << "Animal::GetColor()" << endl;
         return color;
     }
+
     int GetAge() const { return age; }
     string GetName() const { return name; }
 };
