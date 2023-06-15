@@ -48,6 +48,6 @@ int main()
     User user("Tom", 42);
     user.Print();
 
-    // User other = user; - 컴파일 오류!
+    // User other = user; //  - 컴파일 오류!
     // other.Print();
 }
