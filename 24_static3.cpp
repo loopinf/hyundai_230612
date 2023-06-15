@@ -27,8 +27,8 @@ using namespace std;
 #if 0
 class Sample {
 public:
-    static int n; // 정적 멤버 데이터
-    int data; // 멤버 데이터
+    static int n; // 정적 멤버 데이터 / 클래스 상태
+    int data; // 멤버 데이터 / 객체 상태
 
 public:
     Sample()
@@ -81,6 +81,7 @@ int main()
 }
 #endif
 
+#if 1
 class Sample {
     int data;
 
@@ -107,3 +108,4 @@ int main()
     Sample s;
     Sample::Func(&s);
 }
+#endif
