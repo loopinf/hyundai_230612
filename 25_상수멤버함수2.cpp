@@ -45,6 +45,14 @@ public:
         // Point leftTop => const Point leftTop;
         return leftTop;
     }
+
+    // > 값으로 반환할 때는 const 반환이 필요하지 않습니다.
+#if 0
+    Point GetLeftTop() const
+    {
+        return leftTop;
+    }
+#endif
 };
 
 // 2. 상수 멤버 함수만 제공할 경우
@@ -73,6 +81,12 @@ int main()
     r.Print();
 
     const Rect rect2;
+    // 불변 객체(Immutable Object)
+    //  - 초기화 이후로 값을 변경할 수 없습니다.
+    //  => 1) 값의 변경을 추적하는데 용이합니다.
+    //     2) 멀티 스레드(동시성) 프로그래밍에서 객체에 동기화가 필요하지 않습니다.
+    //  > 불변성을 지향하는 것은 좋을 때가 많습니다.
+
     const Point& r2 = rect2.GetLeftTop();
     // r2.Move(100, 200); // 상수 멤버 함수만 호출이 가능합니다.
     r2.Print();
