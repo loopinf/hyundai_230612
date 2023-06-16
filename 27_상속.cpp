@@ -74,6 +74,12 @@ public:
 // => 상속
 //  Dog는 Animal의 속성(멤버 데이터 / 멤버 함수)를 상속 받습니다.
 
+// class Dog : public Animal
+//            --------
+//            접근 변경자
+//              => 오직 C++에만 존재합니다.
+//            protected / private 상속: 객체지향의 범용적인 상속의 개념과 다릅니다.
+
 class Dog : public Animal {
     string owner;
 
