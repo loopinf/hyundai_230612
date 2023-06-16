@@ -41,8 +41,8 @@ public:
 
 int main()
 {
-    Animal* p = new Dog;
-    // Animal* p = new Cat;
+    // Animal* p = new Dog;
+    Animal* p = new Cat;
 
     // 부모의 포인터 p를 통해서는 Dog의 name에 접근이 불가능합니다.
     cout << p->GetAge() << endl;
@@ -56,7 +56,7 @@ int main()
     //   - 부모 타입 객체나 다른 자식 타입 객체일 때
     //     미정의 동작이 발생할 수 있습니다.
     //   > 실행 시간에 타입의 조사가 필요합니다.
-    //     RTTI(Run Time Type Information)
+    //     * RTTI(Run Time Type Information)
     //      => typeid 연산자
     //     1) typeid(클래스) => type_info 구조체
     //     2) typeid(객체)  => type_info 구조체
@@ -66,6 +66,16 @@ int main()
     if (typeid(*p) == typeid(Dog)) {
         cout << "객체는 Dog 타입입니다." << endl;
         Dog* pDog = static_cast<Dog*>(p);
+        cout << pDog->GetName() << endl;
+    } else {
+        cout << "객체는 Dog 타입이 아닙니다." << endl;
+    }
+
+    //  * dynamic_cast 캐스팅 연산자
+    Dog* pDog = dynamic_cast<Dog*>(p);
+    // p가 Dog 타입인지 실행시간에 조사해서, 아니면 nullptr을 반환합니다.
+    if (pDog) {
+        cout << "객체는 Dog 타입입니다." << endl;
         cout << pDog->GetName() << endl;
     } else {
         cout << "객체는 Dog 타입이 아닙니다." << endl;
