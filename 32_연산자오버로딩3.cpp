@@ -37,6 +37,6 @@ int main()
     xstd::cout << ch;
     // xstd::cout.operator<<(ch);
 
-    cout << n << ch;
+    xstd::cout << n << ch;
     // cout.operator<<(n).operator<<(ch);
 }
