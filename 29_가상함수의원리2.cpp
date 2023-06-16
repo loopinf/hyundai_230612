@@ -1,5 +1,5 @@
 // 29_가상함수의원리2.cpp
-//  : 개념을 보기 위한 예제입니다.
+//  : 개념을 보기 위한 예제입니다
 
 #include <iostream>
 using namespace std;
