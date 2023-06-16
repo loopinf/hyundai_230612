@@ -17,12 +17,14 @@ public:
         return os << i.value;
     }
 
+    // ++n;
     Integer& operator++()
     {
         ++value;
         return *this;
     }
 
+    // n++;
     Integer operator++(int)
     {
         Integer temp(*this); // 현재 상태를 복사합니다.
@@ -32,6 +34,28 @@ public:
     }
 };
 
+int main()
+{
+    int n = 42;
+    ++n;
+    /*
+        mov     DWORD PTR n$[rsp], 42           ; 0000002aH
+        mov     eax, DWORD PTR n$[rsp]
+        inc     eax
+        mov     DWORD PTR n$[rsp], eax
+    */
+
+    Integer n2 = 42;
+    ++n;
+    /*
+        mov     DWORD PTR n$[rsp], 42           ; 0000002aH
+        mov     eax, DWORD PTR n$[rsp]
+        inc     eax
+        mov     DWORD PTR n$[rsp], eax
+    */
+}
+
+#if 0
 int main()
 {
     int n1 = 42;
@@ -53,4 +77,8 @@ int main()
     // n2는 증가하고, 증가되기 이전의 값
 
     cout << n2 << endl;
+
+    //   C: for (int i = 0 ; i < 10; i++) {}
+    // C++: for (int i = 0 ; i < 10; ++i) {}
 }
+#endif

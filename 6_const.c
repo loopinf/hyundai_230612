@@ -18,4 +18,7 @@ int main(void)
 {
     int n = 42;
     ++n; // 증가된 값
+
+    ++n;
+    n++;
 }
