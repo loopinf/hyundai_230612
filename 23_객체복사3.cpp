@@ -19,6 +19,27 @@ public:
         ++(*ref);
     }
 
+    User& operator=(const User& rhs)
+    {
+        if (this == &rhs)
+            return *this;
+
+        // 참조 계수를 감소하고, 0이면 해지합니다.
+        if (--(*ref) == 0) {
+            delete[] name;
+            delete ref;
+        }
+
+        // 복사 후, 참조 계수 증가
+        name = rhs.name;
+        age = rhs.age;
+        ref = rhs.ref;
+
+        ++(*ref);
+
+        return *this;
+    }
+
     User(const char* s, int n)
         : age(n)
     {

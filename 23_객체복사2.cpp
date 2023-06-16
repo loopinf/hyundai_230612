@@ -34,6 +34,8 @@ public:
         strcpy(name, rhs.name);
 
         age = rhs.age;
+
+        return *this;
     }
 
     //-------
