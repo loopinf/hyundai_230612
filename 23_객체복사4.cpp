@@ -10,10 +10,12 @@ class User {
 
     // 1) private 영역에 선언만 합니다. - C++98/03
     // User(const User& rhs);
+    // User& operator=(const User& rhs);
 
 public:
     // 2) delete function - 복사 생성자 금지 / C++11
     User(const User& rhs) = delete;
+    User& operator=(const User& rhs) = delete;
 
     User(const char* s, int n)
         : age(n)
