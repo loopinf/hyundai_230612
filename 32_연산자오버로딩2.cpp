@@ -15,7 +15,8 @@ public:
 
     void Print() const { cout << re << " + " << im << "i" << endl; }
 
-    // 1) 멤버 함수
+// 1) 멤버 함수
+#if 0
     Complex operator+(const Complex& rhs)
     {
         Complex result(re + rhs.re, im + rhs.im);
@@ -23,12 +24,13 @@ public:
 
         // return Complex(re + rhs.re, im + rhs.im);
     }
+#endif
 
-    friend Complex Add(const Complex& lhs, const Complex& rhs);
+    friend Complex operator+(const Complex& lhs, const Complex& rhs);
 };
 
 // 2) 일반 함수
-Complex Add(const Complex& lhs, const Complex& rhs)
+Complex operator+(const Complex& lhs, const Complex& rhs)
 {
     Complex result(lhs.re + rhs.re, lhs.im + rhs.im);
     return result;
