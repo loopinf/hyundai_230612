@@ -96,4 +96,12 @@ int main()
     } catch (...) {
         cout << "알수없는 오류가 발생하였습니다." << endl;
     }
+
+    try {
+        OpenFile("a.txt");
+    } catch (std::exception& e) {
+        cout << e.what() << endl;
+    } catch (...) {
+        cout << "알수없는 오류가 발생하였습니다." << endl;
+    }
 }
