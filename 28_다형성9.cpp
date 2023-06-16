@@ -62,6 +62,12 @@ int main()
             // 객체의 복제를 다형성으로 구현하는 설계
             //  => Prototype Pattern
 #if 0
+            if (typeid(*shapes[index]) == typeid(Rect)) {
+
+            } else if (typeid(*shapes[index]) == typeid(Circle)) {
+
+            } // ...
+
             // shapes[index] // Rect?? Circle???
             int type = shapes[index]->type;
             if (type == 0) {
