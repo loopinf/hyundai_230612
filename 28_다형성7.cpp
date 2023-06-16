@@ -36,6 +36,8 @@ int main()
     Animal* p = new Dog;
 
     delete p;
+    // 정적 바인딩 -> p의 타입(Animal) -> Animal::~Animal()
+    // 동적 바인딩 -> p가 가르키는 객체의 타입(Dog) -> Dog::~Dog()
 }
 
 #if 0

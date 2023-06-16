@@ -78,5 +78,7 @@ int main()
     // 모든 도형의 메모리를 해지합니다.
     for (auto e : shapes) {
         delete e;
+        // e -> Rect -> Rect::~Rect()
+        //      Circle -> Circle::~Circle()
     }
 }
