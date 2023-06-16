@@ -36,9 +36,9 @@ ostream cout;
 
 ostream& endl(ostream& os)
 {
+    // 출력 버퍼를 비우는 역활
     return os << '\n';
 }
-
 }
 
 // 1. endl은 함수입니다.
@@ -52,6 +52,7 @@ ostream& endl(ostream& os)
 
 // 3. 다양한 활용이 가능합니다.
 
+#if 0
 ostream& PrintMenu(ostream& os)
 {
     os << "1. 자장면" << endl;
@@ -70,8 +71,9 @@ int main()
     // PrintMenu(cout);
     cout << PrintMenu;
 }
+#endif
 
-#if 0
+#if 1
 int main()
 {
     // cout << "hello" << endl;
