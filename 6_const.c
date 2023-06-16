@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 
+#if 0
 int main(void)
 {
     const int c;
@@ -10,4 +11,11 @@ int main(void)
 
     const char* s = "hello";
     // s[0] = 'x'; // 미정의 동작
+}
+#endif
+
+int main(void)
+{
+    int n = 42;
+    ++n; // 증가된 값
 }
