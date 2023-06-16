@@ -3,7 +3,6 @@
 using namespace std;
 
 // 3) 복사 금지
-
 class User {
     char* name;
     int age;
