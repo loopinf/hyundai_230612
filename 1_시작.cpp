@@ -85,6 +85,9 @@ int main(void)
 //  > 어떤 원리로 구현되어 있을까요?
 //  => std::cin / std::cout
 //    - 연산자 오버로딩과 함수 오버로딩
+//  => std::endl
+//    - 함수, IO Manipulator
+//      ostream& endl(ostream& os) {}
 
 int main()
 {
