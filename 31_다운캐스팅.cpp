@@ -15,6 +15,7 @@ public:
     virtual ~Animal() { }
 
     int GetAge() const { return age; }
+    virtual void foo() = 0;
 };
 
 class Dog : public Animal {
@@ -27,22 +28,23 @@ public:
     }
 
     string GetName() const { return name; }
+    void foo() override { }
 };
 
-class Cat : public Animal {
-    int color;
+// class Cat : public Animal {
+//     int color;
 
-public:
-    Cat()
-        : color(100)
-    {
-    }
-};
+// public:
+//     Cat()
+//         : color(100)
+//     {
+//     }
+// };
 
 int main()
 {
     // Animal* p = new Dog;
-    Animal* p = new Cat;
+    Animal* p = new Dog;
 
     // 부모의 포인터 p를 통해서는 Dog의 name에 접근이 불가능합니다.
     cout << p->GetAge() << endl;
@@ -80,4 +82,12 @@ int main()
     } else {
         cout << "객체는 Dog 타입이 아닙니다." << endl;
     }
+
+    // 3. 다운 캐스팅
+    //  -  static_cast: 잘못된 타입을 감지할 수 없습니다.
+    //                  컴파일 타임에 캐스팅을 수행합니다.
+    //    > 실패할 가능성이 없는 다운 캐스팅
+
+    //  - dynamic_cast: 잘못된 타입인 경우, nullptr을 반환합니다.
+    //                 실행시간에 타입을 조사해서, 캐스팅을 수행합니다.
 }
