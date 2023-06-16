@@ -16,13 +16,16 @@ public:
 class Rect : public Shape {
 public:
     void Draw() const override { cout << "Draw Rect" << endl; }
-    Shape* Clone() const override { return new Rect(*this); }
+
+    // Shape* Clone() const override { return new Rect(*this); }
+    Rect* Clone() const override { return new Rect(*this); }
+    // 공변 반환의 법칙
 };
 
 class Circle : public Shape {
 public:
     void Draw() const override { cout << "Draw Circle" << endl; }
-    Shape* Clone() const override { return new Circle(*this); }
+    Circle* Clone() const override { return new Circle(*this); }
 };
 
 int main()
