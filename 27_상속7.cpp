@@ -76,6 +76,9 @@ int main()
 //    "다형성"을 목적으로 해야 합니다.
 //    : Clean Code
 
+// => Design Pattern, 1995년
+//    C++ Idioms
+
 template <typename TYPE, typename C = deque<TYPE>>
 class Stack {
     // vector<TYPE> v;
