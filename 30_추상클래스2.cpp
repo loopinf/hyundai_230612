@@ -11,11 +11,18 @@ public:
     void StopRecording() { cout << "Stop Recording" << endl; }
 };
 
+class FHDCamera {
+public:
+    void StartRecording() { cout << "FHDCamera Start Recording" << endl; }
+    void StopRecording() { cout << "FHDCamera Stop Recording" << endl; }
+};
+
 class Car {
-    Camera* camera;
+    // Camera* camera;
+    FHDCamera* camera;
 
 public:
-    Car(Camera* p)
+    Car(FHDCamera* p)
         : camera(p)
     {
     }
@@ -30,7 +37,7 @@ public:
 
 int main()
 {
-    Camera camera;
+    FHDCamera camera;
     Car car(&camera);
 
     car.Start();
