@@ -17,6 +17,7 @@ public:
     friend istream& operator>>(istream& is, Point& pt);
 };
 
+// 사용자 정의 타입을 표준 입출력 라이브러리와 함께 사용하는 방법입니다.
 ostream& operator<<(ostream& os, const Point& pt)
 {
     return os << pt.x << ", " << pt.y;
